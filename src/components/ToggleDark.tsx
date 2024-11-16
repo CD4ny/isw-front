@@ -1,16 +1,18 @@
-import { MouseEvent } from 'react';
 import { Button } from './ui/button';
 
 function ToggleDark() {
-  function darkModeHandler(
-    e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
-  ) {
-    e.preventDefault();
+  function darkModeHandler() {
+    const currentTheme = document.body.classList.contains('dark')
+      ? 'light'
+      : 'dark';
+
+    localStorage.setItem('settings', JSON.stringify({ mode: currentTheme }));
+
     document.body.classList.toggle('dark');
   }
 
   return (
-    <Button onClick={(e) => darkModeHandler(e)} variant="default" size="icon">
+    <Button onClick={darkModeHandler} variant="default" size="icon">
       <svg
         className="block dark:hidden"
         width="16"
