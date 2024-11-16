@@ -1,13 +1,21 @@
 import { Outlet } from 'react-router-dom';
+import { SidebarProvider, SidebarTrigger } from '@components';
+import { AppSideBar } from './components';
 
 const RootLayout = () => {
   return (
-    <div>
-      <div className="text-4xl bg-primary/30 p-10 rounded-md">
-        Root layout example
-      </div>
-      <Outlet />
-    </div>
+    <SidebarProvider>
+      <AppSideBar />
+      <main className="w-full ">
+        <header className="pl-2 sm:pl-4 lg:pl-6 pr-4 py-1 ">
+          <SidebarTrigger />
+        </header>
+
+        <div className="px-4 sm:px-6 lg:px-8 pt-4 ">
+          <Outlet />
+        </div>
+      </main>
+    </SidebarProvider>
   );
 };
 

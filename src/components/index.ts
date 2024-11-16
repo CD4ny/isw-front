@@ -5,6 +5,7 @@ export { Input } from './ui/input';
 export { Label } from './ui/label';
 export { Separator } from './ui/separator';
 export { Sheet } from './ui/sheet';
+export * from './ui/sidebar';
 export { Sidebar } from './ui/sidebar';
 export { Skeleton } from './ui/skeleton';
 export { Table } from './ui/table';
