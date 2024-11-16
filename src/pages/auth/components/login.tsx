@@ -1,3 +1,5 @@
+import Fab from '@/components/FloatingButton';
+import ToggleDark from '@/components/ToggleDark';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -6,6 +8,9 @@ export default function Login() {
   return (
     <>
       {/* Login */}
+      <Fab>
+        <ToggleDark />
+      </Fab>
       <div className="relative overflow-hidden backgr">
         <div className="container py-24 lg:py-32 mx-auto">
           <div className="md:pe-8 md:w-1/2 xl:pe-0 xl:w-5/12 mx-auto">
