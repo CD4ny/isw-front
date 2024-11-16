@@ -6,7 +6,7 @@ const routes = {
   login: authRootRoute + '/login',
 
   // Logged in
-  home: rootRoute + '/dashboard',
+  dashboard: rootRoute + '/dashboard',
 };
 
 export default routes;

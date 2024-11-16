@@ -1,6 +1,17 @@
-import { Button, Input, Label } from '@/components';
+import { Button, Input, Label } from '@components';
+import useStore from '@store';
 
 export default function Login() {
+  const {
+    user: { setData },
+  } = useStore();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // TODO: Add login logic
+    setData('email', 'user@user.com');
+  };
+
   return (
     <div className="relative overflow-hidden">
       <div className="container py-24 lg:py-32 mx-auto">
@@ -13,7 +24,7 @@ export default function Login() {
             Teams use Shadcn UI to build beautiful cross-platform hybrid apps in
             a fraction of the time.
           </p>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <Label htmlFor="email" className="sr-only">
                 Email
